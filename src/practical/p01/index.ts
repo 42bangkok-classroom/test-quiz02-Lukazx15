@@ -31,7 +31,7 @@ interface UserOutput {
   phone: string;
   address: Address | null;
 }
-export const fetchUsers = async (): Promise<UserOutput[]> => {
+export const getPostalAddress = async (): Promise<UserOutput[]> => {
   try {
     const res = await axios.get<apiData[]>("https://jsonplaceholder.typicode.com/users");
     const users: UserOutput[] = res.data.map((user) => ({
